@@ -1,0 +1,58 @@
+/*
+*:not(path):not(g) {
+	color: hsla(210, 100%, 100%, 0.9) !important;
+	background: hsla(210, 100%, 50%, 0.5) !important;
+	outline: solid 0.25rem hsla(210, 100%, 100%, 0.5) !important;
+	box-shadow: none !important;
+}
+*/
+
+body {
+background-image: url(../images/soft.jpg);
+}
+
+.title {
+    text-align: center;
+    font-family: 'Bowlby One SC', cursive;
+}
+
+.player-move-text {
+    text-align: center;
+}
+#player-move {
+    font-size: 30px;
+    color: blue;
+}
+#computer-move {
+    font-size: 30px;
+    color: darkblue;
+}
+.flex-grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+    grid-gap: 40px;
+    justify-content: center;
+    -webkit-flex-flow: column wrap;
+    flex-flow: column wrap;
+}
+
+.winner {
+    text-align: center;
+    color: red
+}
+.player-move {
+    text-align: center;
+}
+.computer-move {
+    text-align: center;
+}
+
+/*
+*:not(path):not(g) {
+	color: hsla(210, 100%, 100%, 0.9) !important;
+	background: hsla(210, 100%, 50%, 0.5) !important;
+	outline: solid 0.25rem hsla(210, 100%, 100%, 0.5) !important;
+	box-shadow: none !important;
+}
+*/

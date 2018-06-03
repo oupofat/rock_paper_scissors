@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC" rel="stylesheet">
+    <title>Example</title>
+</head>
+
+<body>
+
+    <h1 class="title">Rock, Paper, and Scissors</h1>
+    <div>
+        <h2 class="player-move-text">FIGHT!!!!:</h2>
+        </ div>
+        <div class="player-move">
+            <h2 class="you">You:</h2>
+            <span id="player-move"></span>
+        </div>
+
+
+        <div class="flex-grid">
+            <button id="play-rock"><img src="icons/rock.png"></button>
+            <button id="play-paper"><img src="icons/paper.png"></button>
+            <button id="play-scissors"><img src="icons/scissors.png"></button>
+        </div>
+        <div class="computer-move">
+            <h2 class="computer">Computer:</h2>
+            <span id="computer-move"></span></div>
+        <div class="winner">
+            <h2 class="game-winner" id="game-result"></h2>
+        </div>
+</body>
+<script src="jquery.js"></script>
+<script>
+    //This function preforms the computer move.
+    function playComputerMove() {
+        let com = ["rock", "paper", "scissors"]
+        let computer = com[Math.floor(Math.random() * com.length)]
+        //console.log(computer);
+        return (computer);
+    };
+
+    //this function preforms the game
+    function findWinner(player, computer) {
+        if (player === "rock" && computer === "paper") {
+            $("#game-result").text("you lose");
+        } else if (computer === "rock" && player === "rock") {
+            $("#game-result").text("It's a tie!");
+        } else if (player === "rock" && computer === "scissors") {
+            $("#game-result").text("You Win!");
+        }
+        if (player === "paper" && computer === "scissors") {
+            $("#game-result").text("You lose!");
+        } else if (player === "paper" && computer === "paper") {
+            $("#game-result").text("It's a tie!");
+        } else if (player === "paper" && computer === "rock") {
+            $("#game-result").text("You win!");
+        }
+        if (player === "scissors" && computer === "rock") {
+            $("#game-result").text("You lose!");
+        } else if (computer === "scissors" && player === "scissors") {
+            $("#game-result").text("It's a tie!");
+        } else if (player === "scissors" && computer === "paper") {
+            $("#game-result").text("You win!");
+        }
+    };
+    //when the player button rock is pushed it returns the playComputerMove function. then prints it.
+    $("#play-rock").on("click", function() {
+        let computer = playComputerMove();
+        $("#computer-move").text(computer);
+        //console.log(typeof computer);
+        $("#player-move").text("rock");
+        let player = "rock";
+
+        findWinner(player, computer);
+    });
+    //when the player button paper is pushed it returns the playComputerMove function. then prints it.
+    $("#play-paper").on("click", function() {
+        let computer = playComputerMove();
+        $("#computer-move").text(computer);
+        //console.log(computer);
+        $("#player-move").text("paper");
+        let player = "paper";
+
+        findWinner(player, computer);
+    });
+    //when the player button scissors is pushed it returns the playComputerMove function. then prints it.
+    $("#play-scissors").on("click", function() {
+        let computer = playComputerMove();
+        $("#computer-move").text(computer);
+        //console.log(computer);
+        $("#player-move").text("scissors");
+        let player = "scissors";
+
+        findWinner(player, computer);
+    });
+</script>
+
+</html>

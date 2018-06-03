@@ -4,13 +4,14 @@
 <head>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <meta charset="utf-8">
-    <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC|Patua+One" rel="stylesheet">
     <title>Example</title>
 </head>
 
 <body>
 
     <h1 class="title">Rock, Paper, and Scissors</h1>
+    
     <div>
         <h2 class="player-move-text">FIGHT!!!!:</h2>
         </ div>
@@ -45,21 +46,21 @@
     //this function preforms the game
     function findWinner(player, computer) {
         if (player === "rock" && computer === "paper") {
-            $("#game-result").text("you lose");
+            $("#game-result").text("you lose!!!");
         } else if (computer === "rock" && player === "rock") {
             $("#game-result").text("It's a tie!");
         } else if (player === "rock" && computer === "scissors") {
             $("#game-result").text("You Win!");
         }
         if (player === "paper" && computer === "scissors") {
-            $("#game-result").text("You lose!");
+            $("#game-result").text("You lose!!!!");
         } else if (player === "paper" && computer === "paper") {
             $("#game-result").text("It's a tie!");
         } else if (player === "paper" && computer === "rock") {
             $("#game-result").text("You win!");
         }
         if (player === "scissors" && computer === "rock") {
-            $("#game-result").text("You lose!");
+            $("#game-result").text("You lose!!!!");
         } else if (computer === "scissors" && player === "scissors") {
             $("#game-result").text("It's a tie!");
         } else if (player === "scissors" && computer === "paper") {
